@@ -11,6 +11,11 @@ MEALS = (
     ('D', 'Dinner'),
 )
 
+class Toy(models.Model): 
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=50)
+
+
 class Dog(models.Model): 
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100)

@@ -1,7 +1,8 @@
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 from .forms import FeedingForm
-from .models import Dog
+from .models import Dog, Toy
 from django.http import HttpResponse
 
 # Create your views here.
@@ -45,3 +46,10 @@ class DogUpdate(UpdateView):
 class DogDelete(DeleteView):
   model = Dog
   success_url = '/dogs/'
+
+# or you can just put it in the main_app and it will automatically know without putting the temlate_name 
+# I'm doing because this makes me understand it better
+class ToyList(ListView): 
+  model = Toy
+  template_name = 'toys/toy_list.html'
+
