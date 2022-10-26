@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic.list import ListView
+from django.views.generic import ListView, DetailView
 from .forms import FeedingForm
 from .models import Dog, Toy
 from django.http import HttpResponse
@@ -52,4 +52,9 @@ class DogDelete(DeleteView):
 class ToyList(ListView): 
   model = Toy
   template_name = 'toys/toy_list.html'
+
+class ToyDetail(DetailView): 
+  model = Toy
+  template_name = 'toys/toy_detail.html'
+
 
