@@ -57,4 +57,18 @@ class ToyDetail(DetailView):
   model = Toy
   template_name = 'toys/toy_detail.html'
 
+class ToyCreate(CreateView): 
+  model = Toy 
+  fields = '__all__'
+  template_name = 'toys/toy_form.html'
 
+
+class ToyUpdate(UpdateView): 
+  model = Toy
+  fields = '__all__'
+  template_name = 'toys/toy_form.html'
+
+class ToyDelete(DeleteView): 
+  model = Toy
+  template_name = 'toys/toy_confirm_delete.html'
+  success_url = '/dogs/'
